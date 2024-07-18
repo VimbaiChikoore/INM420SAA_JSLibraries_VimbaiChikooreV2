@@ -1,5 +1,4 @@
-
-
+/* Lib 1: glide */
 .glide{
     height: 400px;
     display: inline;
@@ -7,8 +6,8 @@
     align-items: center;
 }
 
-img{
-    padding: 40px;
+.glide__slide{
+    padding: 40px 20px 20px 40px;
 }
 .glide__arrows button{
    border: none;
@@ -17,3 +16,51 @@ img{
    border-radius: 50%;
    padding: 10px;
 }
+
+#header img{
+    max-height: 800px;
+    width: 100%;
+    object-fit: cover;
+    padding:20px 0 40px 0;
+}
+
+.center-text h1, h3, h2{
+    text-align: center;
+}
+
+.center-text p, .center-p{
+    text-align: center;
+}
+
+/* lib 2: Lightbox */
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; 
+    margin:auto;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.grid img{
+ max-width: 100%;
+}
+
+.img:nth-child(1){
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+.img:nth-child(2){
+    grid-row: span 1;
+}
+

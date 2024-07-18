@@ -6,6 +6,7 @@
     <title>JS Libs</title>
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -13,12 +14,17 @@
     <!-- JS Lib1: Required Core Stylesheet -->
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
 
-    <!-- Optional Theme Stylesheet -->
+    <!-- JS Lib1: Optional Theme Stylesheet -->
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
 
     <!-- JS Lib 2: Lightbox -->
     <link href="assets/css/lightbox.css" rel="stylesheet" />
 
+    <!-- JS Lib 3: AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- JS Lib 4: Chart.js in the script tag -->
+    
 </head>
 
 <body>
@@ -59,17 +65,17 @@
     </div>
   </nav>
 
-    <!-- product slider -->
+    <!-- Lib 1: product slider -->
     <div id="product_menu">
       <div class="glide">
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
-              <li class="glide__slide"><img src="assets/images/plant-stand-light.avif" alt="plant stand"></li>
-              <li class="glide__slide"><img src="assets/images/furniture.avif" alt="furniture"></li>
-              <li class="glide__slide"><img src="assets/images/decoration.avif" alt="decoration"></li>
-              <li class="glide__slide"><img src="assets/images/beds-mattresses.avif" alt="beds"></li>
-              <li class="glide__slide"><img src="assets/images/kitchen-appliances.avif" alt="kitchen"></li>
-              <li class="glide__slide"><img src="assets/images/storage-organisation.avif" alt="storage"></li>
+              <li class="glide__slide"><img src="assets/images/plant-stand-light.avif" alt="plant stand"><br><p>Deals</p</li>
+              <li class="glide__slide"><img src="assets/images/furniture.avif" alt="furniture"><br><p>Furniture</p></li>
+              <li class="glide__slide"><img src="assets/images/decoration.avif" alt="decoration"><p>Wall & hangings</p></li>
+              <li class="glide__slide"><img src="assets/images/beds-mattresses.avif" alt="beds"><p>Bedroom</p></li>
+              <li class="glide__slide"><img src="assets/images/kitchen-appliances.avif" alt="kitchen"><p>Kitchen</p></li>
+              <li class="glide__slide"><img src="assets/images/storage-organisation.avif" alt="storage"><p>Storage</p></li>
             </ul>
           </div>
 
@@ -83,14 +89,62 @@
         </div>
     </div>
 
+    <div id="header">
+      <img src="assets/images/header-img.avif">
+    </div>
+
+    <!-- Lib2: Summer Sale Feature -->
     <div>
-      <h1>Welcome to Ihea Canada</h1>
-      <h3>Summer SALE - Warm days, hotter deals</h3>
-      <p>When the weather’s right and summer warmth is in the air there’s no better place for relaxing, gathering, or dining than outside.</p>
+      <div class="center-text">
+        <h1>Welcome to IHEA Canada</h1>
+        <h3>Summer SALE - Warm days, hotter deals</h3>
+        <p>When the weather’s right and summer warmth is in the air there’s no better place for relaxing, gathering, or dining than outside.</p>
+      </div>  
+      <!-- Lib3: data-aos:fade-up -->
+      <div class="container" data-aos="fade-up">
+            <div class="grid">
+              <a href="assets/images/summer.webp" data-title="summer" data-lightbox="summer-img" class="img"><img src="assets/images/summer.webp"></a>
+              <a href="assets/images/sale-splash.avif" data-title="summer" data-lightbox="summer-img" class="img"><img src="assets/images/sale-splash.avif"></a>
+              <a href="assets/images/summer2.avif" data-title="summer" data-lightbox="summer-img" class="img"><img src="assets/images/summer2.avif"></a>
+              <a href="assets/images//summer4.avif" data-title="summer" data-lightbox="summer-img" class="img"><img src="assets/images//summer4.avif"></a>
+              <a href="assets/images/summer3.webp" data-title="summer" data-lightbox="summer-img" class="img"><img src="assets/images/summer3.webp"></a>
+            </div>
+        </div>
+    </div>
+
+    <div>
+      <h2>Our Customer Satisfaction Rate:</h2>
+      <p class="center-text center-p">there should be a pie chart here <br> but it's not showing up :(</p>
       <div>
-        
+        <canvas id="myChart"></canvas>
       </div>
     </div>
+
+
+  <!-- JS Lib 4 -->
+  <script>
+
+  const ctx = document.getElementById('myChart');
+
+    const Chart =(ctx, {
+      labels: [
+        'Satisfied',
+        'Unsatisfied',
+      ],
+      datasets: [{
+        label: 'Customer Satisfaction',
+        data: [100, 0,],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+        ],
+        hoverOffset: 4
+      }]
+    });
+
+  </script>
+
+  
 
   <!-- JSLib1: Glide JS -->
   <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
@@ -106,7 +160,19 @@
     }).mount()
   </script>
 
-  <!-- JS Lib2: Lightroom -->
+  <!-- JS Lib2: Lightbox -->
   <script src="main.js"></script>
+
+  <!-- JS Lib 3: AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- JS LIB 4: Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
