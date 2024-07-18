@@ -1,0 +1,19 @@
+
+
+.glide{
+    height: 400px;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    padding: 40px;
+}
+.glide__arrows button{
+   border: none;
+   background-color: rgb(39, 38, 38);
+   color: white;
+   border-radius: 50%;
+   padding: 10px;
+}

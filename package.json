@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server --baseDir=\"public\""
+    "start": "lite-server"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,7 @@
     "lite-server": "^2.6.1"
   },
   "dependencies": {
-    "@glidejs/glide": "^3.6.2"
+    "@glidejs/glide": "^3.6.2",
+    "lightbox2": "^2.11.4"
   }
 }
